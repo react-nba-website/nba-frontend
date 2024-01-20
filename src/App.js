@@ -1,45 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
-import { useEffect } from 'react';
-import axios from 'axios';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from './screens/HomePage';
+import Players from './screens/Players';
+import Teams from './screens/Teams';
+import Games from './screens/Games';
+import Stats from './screens/Stats';
+import PlayerDetail from './screens/DetailPages/PlayerDetail';
+import TeamDetail from './screens/DetailPages/TeamDetail';
+import GameDetail from './screens/DetailPages/GameDetail';
 
 function App() {
-  useEffect(() => {
-    axios.get("https://free-nba.p.rapidapi.com/players", {
-      params: {
-        page: '0',
-        per_page: '25'
-      },
-      headers: {
-        'X-RapidAPI-Key': '489a4fa2femshe401e0284dafe25p1959fejsn73d8f2d40328',
-        'X-RapidAPI-Host': 'free-nba.p.rapidapi.com'
-      }
-    })
-      .then((res) => {
-        console.log(res.data)
-      })
-      .catch((er) => {
-        console.log(er)
-      })
-  }, [])
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' index element={<HomePage />} />
+        <Route path="players" element={<Players />} />
+        <Route path="teams" element={<Teams />} />
+        <Route path="games" element={<Games />} />
+        <Route path="stats" element={<Stats />} />
+        {/* Detail Pages */}
+        <Route path="players/*" element={<PlayerDetail />} />
+        <Route path="teams/*" element={<TeamDetail />} />
+        <Route path="games/*" element={<GameDetail />} />
+
+      </Routes>
+    </BrowserRouter>
   );
 }
 

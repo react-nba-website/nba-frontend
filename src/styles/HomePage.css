@@ -1,0 +1,19 @@
+.home-page-div {
+    width: 100%;
+    height: 100vh;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-page-route-item {
+    width: 200px;
+    height: 200px;
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    cursor: pointer;
+}
