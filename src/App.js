@@ -8,6 +8,7 @@ import Stats from './screens/Stats';
 import PlayerDetail from './screens/DetailPages/PlayerDetail';
 import TeamDetail from './screens/DetailPages/TeamDetail';
 import GameDetail from './screens/DetailPages/GameDetail';
+import StatDetail from './screens/DetailPages/StatDetail';
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
         <Route path="players/*" element={<PlayerDetail />} />
         <Route path="teams/*" element={<TeamDetail />} />
         <Route path="games/*" element={<GameDetail />} />
-
+        <Route path="stats/*" element={<StatDetail />} />
       </Routes>
     </BrowserRouter>
   );
