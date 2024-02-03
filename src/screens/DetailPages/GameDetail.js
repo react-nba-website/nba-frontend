@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import axios from 'axios';
+import '../../styles/Games.css';
 
 function GameDetail() {
     const location = useLocation();
@@ -9,7 +10,7 @@ function GameDetail() {
     useEffect(() => {
         const tmp = location.pathname.split('/')
         const id = tmp[tmp.length - 1]
-        // Oyunun detaylarını çekmek için API isteği yapın
+
         axios.get(`https://free-nba.p.rapidapi.com/games/` + id, {
             headers: {
                 'X-RapidAPI-Key': '489a4fa2femshe401e0284dafe25p1959fejsn73d8f2d40328',
@@ -29,7 +30,7 @@ function GameDetail() {
     }
 
     return (
-        <div className="container mt-5">
+        <div className="container mt-5 " >
             <h1 className="mb-4">Game Detail</h1>
             <div className="card">
                 <div className="card-body">

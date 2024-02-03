@@ -1,6 +1,11 @@
+// Games.js
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBasketballBall, faCalendar } from '@fortawesome/free-solid-svg-icons';
+import '../styles/Games.css';
 
 function Games() {
     const [games, setGames] = useState([]);
@@ -25,17 +30,27 @@ function Games() {
     }, []);
 
     return (
-        <div className="container mt-5">
+        <div className="container mt-5" >
             <h1 className="mb-4">Games</h1>
-            <ul className="list-group">
+            <ul className="calendar" >
                 {games.map(game => (
-                    <Link style={{ textDecoration: 'none', color: 'black' }} to={`/games/${game.id}`}>
-                        <li key={game.id} className="list-group-item">
-                            <strong>{game.home_team.full_name}</strong> vs <strong>{game.visitor_team.full_name}</strong>
-                            <p>Date: {game.date}</p>
-                        </li>
-                    </Link>
-
+                    <li key={game.date} className="day">
+                        <ul className="games-list" >
+                            <li className="game">
+                                <div className="team-names">
+                                    <strong>{game.home_team.full_name}</strong> vs <strong>{game.visitor_team.full_name}</strong>
+                                </div>
+                                <div className="date-section">
+                                    <p><FontAwesomeIcon icon={faCalendar} className="calendar-icon" /> Date: {game.date}</p>
+                                </div>
+                                <Link to={`/games/${game.id}`}>
+                                    <button className="details-btn">
+                                        <p><FontAwesomeIcon icon={faBasketballBall} className="basketball-icon" /> Detail</p>
+                                    </button>
+                                </Link>
+                            </li>
+                        </ul>
+                    </li>
                 ))}
             </ul>
         </div>
