@@ -2,17 +2,15 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import "../../styles/PlayerDetail.css";
 
 function PlayerDetail() {
   const navigate = useNavigate();
   const location = useLocation();
-  const pathSegments = location.pathname.split("/"); // Path'ı / karakterinden ayırarak parçalara böler
+  const pathSegments = location.pathname.split("/");
   const goBackHandler = () => {
-    navigate(-1); // Go back
-    // or
-    // navigate('/your-url'); // Navigate to a specific URL
+    navigate(-1);
   };
-  // Eğer URL'de "players" ve bir ID varsa, bu ID'yi al
   const playerId =
     pathSegments.length === 3 && pathSegments[1] === "players"
       ? pathSegments[2]
@@ -32,7 +30,6 @@ function PlayerDetail() {
         })
         .then((res) => {
           setPlayerData(res.data);
-          console.log(res.data);
         })
         .catch((er) => {
           console.error(er);
@@ -41,48 +38,63 @@ function PlayerDetail() {
   }, [playerId]);
 
   if (!playerData) {
-    return <div>Loading...</div>;
+    return (
+      <div
+        style={{
+          color: "darkblue",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          fontSize: "30px",
+        }}
+      >
+        Loading....
+      </div>
+    );
   }
 
   return (
-    <div>
-      <div key={playerData.id} style={{ margin: "5px", padding: "5px" }}>
-        <h1>Player Details</h1>
-
-        <div className="card">
-          <div className="card-body">
-            <h2 className="card-title">
-              {playerData.first_name} {playerData.last_name}
-            </h2>
+    <div className="container mt-4">
+      <div className="card">
+        <div className="card-body">
+          <h1 className="card-title">
+            {playerData.first_name} {playerData.last_name}
+          </h1>
+          <div className="img-container">
+            <img
+              src="https://www.wallmonkeys.com/cdn/shop/products/50745528-LRG_530x.jpg?v=1578661137" // Resmin URL'sini buraya ekleyin
+              alt="Player"
+            />
           </div>
           <ul className="list-group list-group-flush">
             <li className="list-group-item">
-              Team: {playerData.team.full_name}
-            </li>
-            <li className="list-group-item">City: {playerData.team.city}</li>
-
-            <li className="list-group-item">
-              Positions: {playerData.position}
+              <strong>Team:</strong> {playerData.team.full_name}
             </li>
             <li className="list-group-item">
-              Conference: {playerData.team.conference}
+              <strong>City:</strong> {playerData.team.city}
             </li>
             <li className="list-group-item">
-              Division: {playerData.team.division}
+              <strong>Positions:</strong> {playerData.position}
             </li>
             <li className="list-group-item">
-              Height Feet: {playerData.height_feet}
+              <strong>Conference:</strong> {playerData.team.conference}
             </li>
             <li className="list-group-item">
-              Height Inches: {playerData.height_inches}
+              <strong>Division:</strong> {playerData.team.division}
+            </li>
+            <li className="list-group-item">
+              <strong>Height Feet:</strong> {playerData.height_feet}
+            </li>
+            <li className="list-group-item">
+              <strong>Height Inches:</strong> {playerData.height_inches}
             </li>
           </ul>
           <button
             type="button"
-            className="btn btn-outline-success"
+            className="btn btn-outline-secondary mt-3"
             onClick={goBackHandler}
           >
-            Go Back!
+            Go Back
           </button>
         </div>
       </div>
