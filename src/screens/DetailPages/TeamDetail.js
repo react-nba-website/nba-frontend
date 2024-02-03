@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import '../../styles/TeamDetail.css'; // Stil dosyasını import et
 
 function TeamDetail() {
     const location = useLocation();
     const [teamDetails, setTeamDetails] = useState(null);
+    const navigate = useNavigate();
+
+    const pathSegments = location.pathname.split("/");
+    const goBackHandler = () => {
+        navigate(-1);
+    };
 
     useEffect(() => {
         const tmp = location.pathname.split('/');
@@ -29,9 +36,14 @@ function TeamDetail() {
     }
 
     return (
-        <div className="container mt-4">
-            <h2 className="mb-3">{teamDetails.full_name}</h2>
-            <div className="card">
+        <div id="team-detail-container" className="container mt-4">
+            <div id="team-detail-card" className="card">
+                <h2 className="mb-3">{teamDetails.full_name}</h2>
+                <img
+                    src="https://static.vecteezy.com/system/resources/thumbnails/024/553/676/small/skull-wearing-crown-logo-skull-king-sticker-pastel-cute-colors-generative-ai-png.png"  // Resmin URL'sini buraya ekleyin
+                    alt={teamDetails.full_name}
+                    className="card-img-top team-image"
+                />
                 <div className="card-body">
                     <p className="card-text"><strong>Full Name:</strong> {teamDetails.full_name}</p>
                     <p className="card-text"><strong>Name:</strong> {teamDetails.name}</p>
@@ -39,15 +51,17 @@ function TeamDetail() {
                     <p className="card-text"><strong>City:</strong> {teamDetails.city}</p>
                     <p className="card-text"><strong>Conference:</strong> {teamDetails.conference}</p>
                     <p className="card-text"><strong>Division:</strong> {teamDetails.division}</p>
-                    
-
-                    {/* <p className="card-text"><strong>Abbreviation:</strong> {teamDetails.abbreviation}</p> */}
-                 
-
-
                     {/* Ekstra bilgileri buraya ekleyebilirsiniz */}
                 </div>
+                <button
+                type="button"
+                className="btn btn-go-back mt-3"
+                onClick={goBackHandler}
+            >
+                Go Back
+            </button>
             </div>
+            
         </div>
     );
 }

@@ -1,0 +1,77 @@
+/* TeamDetail.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url("https://lh3.googleusercontent.com/9iUUh_3xtubw1wD64AKEDxjfgguCCEO_d-VgEKl-7KW1XHCnyWZ4vjSMDgl2KtjKt1vONeLBZG5o=w1440-ns-nd-rj") center/cover no-repeat fixed;
+    background-size: cover; /* Ekran boyutuna sığacak şekilde ayarla */
+    height: 100vh; /* Ekran yüksekliği kadar uzat */
+    font-family: 'Arial', sans-serif; /* İstenilen fontu ekleyebilirsiniz */
+    color: #333; /* Metin rengini belirleyebilirsiniz */
+}
+#team-detail-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center; /* Ekranın ortasında durması için */
+    
+}
+
+#team-detail-card {
+    width: 33.33%; /* Ekranın 1/3'ü genişliğinde */
+    margin: 20px auto 0; /* 20px üst margin ekleyerek kartı aşağı kaydır */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Kart içeriğini ortala */
+    display: flex;
+    flex-direction: column;
+    max-height: 85vh; /* Kartın yüksekliği ekranın %80'i kadar olsun */
+}
+
+#team-detail-card .card-body {
+    padding: 20px;
+    max-height: 300px;
+    /* overflow-y: auto;  */
+}
+
+#team-detail-card .card-text {
+    margin-bottom: 10px;
+}
+
+#team-detail-card h2 {
+    color: #333;
+    margin-bottom: 10px; /* H2 başlığının altında biraz boşluk bırak */
+}
+
+.team-image {
+    max-width: 100%; /* Resmi kartın genişliği kadar sınırla */
+    max-height: 45%; /* Resmi kartın yüksekliğinin yarısı kadar sınırla */
+    object-fit: contain; /* Resmi boyutuna sığdırırken oranları korur */
+}
+
+
+/* olmasa da olur dursun şimdilik */
+#team-detail-card:hover {
+    transform: scale(1.05);
+}
+/* TeamDetail.css */
+
+/* Diğer stiller buraya kadar */
+
+/* Stil eklemeleri */
+.btn-go-back {
+    background-color: #040704; /* Arkaplan rengi */
+    color: white; /* Yazı rengi */
+    border: none; /* Kenarlık olmaması için */
+    padding: 10px 20px; /* Buton içeriği içindeki boşluklar */
+    font-size: 16px; /* Yazı boyutu */
+    cursor: pointer; /* İmleci el işareti yap */
+    border-radius: 5px; /* Kenar yumuşatma */
+    transition: background-color 0.3s, color 0.3s; /* Renk değişimine yumuşak geçiş */
+}
+
+.btn-go-back:hover {
+    background-color: #6d6d6d; /* Hover durumunda arkaplan rengi */
+    color: #fff; /* Hover durumunda yazı rengi */
+}

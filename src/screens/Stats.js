@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import '../styles/Stats.css'; // Stats.css dosyasını import et
 
 function Stats() {
     const [stats, setStats] = useState([]);
@@ -27,11 +28,10 @@ function Stats() {
     return (
         <div className="container mt-4">
             <h2>Stats</h2>
-            <h2> <Link to={`StatDetail`} style={{ textDecoration: 'none' }}>Go Details</Link></h2>
-            <table className="table table-bordered">
+            <h2><Link to={`StatDetail`} style={{ textDecoration: 'none' }}>Go Details</Link></h2>
+            <table className="table table-bordered stats-table">
                 <thead>
                     <tr>
-                       
                         <th scope="col">Player</th>
                         <th scope="col">Team</th>
                         <th scope="col">Points</th>
@@ -45,9 +45,7 @@ function Stats() {
                 </thead>
                 <tbody>
                     {stats.map((stat) => (
-                       
-                       <tr key={stat.id}>
-                           
+                        <tr key={stat.id}>
                             <td>{stat.player.first_name} {stat.player.last_name}</td>
                             <td>{stat.team.full_name}</td>
                             <td>{stat.pts}</td>

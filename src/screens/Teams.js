@@ -1,6 +1,8 @@
+// Teams.js
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import '../styles/Teams.css'; // Teams.css dosyasını import et
 
 function Teams() {
     const [teams, setTeams] = useState([]);
@@ -31,13 +33,18 @@ function Teams() {
     };
 
     return (
-        <div className="container mt-4">
+        <div className="container teams-container">
             <h2>Teams</h2>
             <div className="row">
                 {teams.map((team) => (
                     <div key={team.id} className="col-md-4 mb-4">
                         <Link to={`/teams/${team.id}`} style={{ textDecoration: 'none' }}>
-                            <div className="card">
+                            <div className="card shadow-sm team-card">
+                                <img
+                                    src="https://thumbs.dreamstime.com/b/basketball-team-11952184.jpg"
+                                    alt={team.full_name}
+                                    className="card-img-top"
+                                />
                                 <div className="card-body">
                                     <h5 className="card-title">{team.full_name}</h5>
                                     <p className="card-text">Conference: {team.conference}</p>
@@ -49,7 +56,7 @@ function Teams() {
                     </div>
                 ))}
             </div>
-            <nav>
+            <div className="pagination-container">
                 <ul className="pagination">
                     <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
                         <button className="page-link" onClick={() => handlePageChange(currentPage - 1)}>
@@ -59,13 +66,13 @@ function Teams() {
                     <li className="page-item active">
                         <span className="page-link">{currentPage}</span>
                     </li>
-                    <li className={`page-item ${currentPage >=2  ? 'disabled' : ''}`}>
-                        <button  className="page-link" onClick={() => handlePageChange(currentPage + 1)}>
+                    <li className={`page-item ${currentPage >= 2 ? 'disabled' : ''}`}>
+                        <button className="page-link" onClick={() => handlePageChange(currentPage + 1)}>
                             Next
                         </button>
                     </li>
                 </ul>
-            </nav>
+            </div>
         </div>
     );
 }
