@@ -1,6 +1,9 @@
+// StatDetail.js
+
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import '../../styles/StatDetail.css'; // Stil dosyasını import et
 
 function StatDetail() {
     const [stats, setStats] = useState([]);
@@ -19,7 +22,6 @@ function StatDetail() {
             .then((res) => {
                 setStats(res.data.data);
                 console.log(res.data.data);
-
             })
             .catch((er) => {
                 console.log(er);
@@ -27,9 +29,9 @@ function StatDetail() {
     }, []);
 
     return (
-        <div className="container mt-4">
-            <h2>StatDetail</h2>
-            <table className="table table-bordered">
+        <div className="container detail-container mt-4">
+            <h2 className="detail-heading">Stat Detail</h2>
+            <table className="table table-bordered detail-table">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -79,11 +81,11 @@ function StatDetail() {
                             <td>{stat.ft_pct}</td>
                             <td>{stat.fta}</td>
                             <td>{stat.ftm}</td>
-                            <td><Link to={"/games/"+stat.game.id}>Game</Link></td> 
+                            <td><Link to={`/games/${stat.game.id}`}>Game</Link></td> 
                             <td>{stat.min}</td>
                             <td>{stat.oreb}</td>
                             <td>{stat.pf}</td>
-                            <td>{stat.player.first_name} {stat.player.last_name}</td>
+                            <td>{`${stat.player.first_name} ${stat.player.last_name}`}</td>
                             <td>{stat.pts}</td>
                             <td>{stat.reb}</td>
                             <td>{stat.stl}</td>
