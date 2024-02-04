@@ -1,0 +1,73 @@
+.container {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.calendar {
+    list-style: none;
+    padding: 0;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.5);
+    /* Saydam beyaz arka plan */
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.card-body {
+    text-align: left;
+}
+
+.day {
+    margin-bottom: 20px;
+}
+
+.date {
+    background-color: #f2f2f2;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.games-list {
+    list-style: none;
+    padding: 0;
+}
+
+.game {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.team-names {
+    font-weight: bold;
+}
+
+.details-btn {
+    background-color: rgb(255, 165, 0);
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url("https://lh3.googleusercontent.com/9iUUh_3xtubw1wD64AKEDxjfgguCCEO_d-VgEKl-7KW1XHCnyWZ4vjSMDgl2KtjKt1vONeLBZG5o=w1440-ns-nd-rj") center/cover no-repeat fixed;
+    background-size: cover;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
