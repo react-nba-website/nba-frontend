@@ -1,13 +1,14 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from "./screens/HomePage";
-import Players from "./screens/Players";
-import Teams from "./screens/Teams";
-import Games from "./screens/Games";
-import Stats from "./screens/Stats";
-import PlayerDetail from "./screens/DetailPages/PlayerDetail";
-import TeamDetail from "./screens/DetailPages/TeamDetail";
-import GameDetail from "./screens/DetailPages/GameDetail";
+import HomePage from './screens/HomePage';
+import Players from './screens/Players';
+import Teams from './screens/Teams';
+import Games from './screens/Games';
+import Stats from './screens/Stats';
+import PlayerDetail from './screens/DetailPages/PlayerDetail';
+import TeamDetail from './screens/DetailPages/TeamDetail';
+import GameDetail from './screens/DetailPages/GameDetail';
+import StatDetail from './screens/DetailPages/StatDetail';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="players/*" element={<PlayerDetail />} />
         <Route path="teams/*" element={<TeamDetail />} />
         <Route path="games/*" element={<GameDetail />} />
+        <Route path="stats/*" element={<StatDetail />} />
       </Routes>
     </BrowserRouter>
   );
