@@ -1,20 +1,21 @@
+// Players.jsx
+
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import "../styles/Player.css";
 
 function Players() {
   const [players, setPlayers] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const playersPerPage = 25;
+  const playersPerPage = 10;
 
   useEffect(() => {
-    // Sıralama ve sayfalama için gerekli parametreleri ekleyin
     axios
       .get("https://free-nba.p.rapidapi.com/players", {
         params: {
           page: currentPage,
           per_page: playersPerPage,
-          // Sıralama kriterini ekleyin (örneğin, ID'ye göre sıralama)
           order_by: "id",
         },
         headers: {
@@ -36,27 +37,34 @@ function Players() {
   };
 
   return (
-    <div>
-      <h1>Player List</h1>
+    <div className="container">
+      <h1 className="player-list-heading">Player List</h1>
 
-      <ul class="list-group list-group-flush">
+      <ul className="player-list">
         {players.map((player) => (
-          <li class="list-group-item" key={player.id}>
+          <li className="player-list-item" key={player.id}>
             <Link to={`/players/${player.id}`}>
               {player.first_name} {player.last_name}
             </Link>
           </li>
         ))}
       </ul>
-      <div>
+
+      <div className="pagination">
         {/* Sayfalama düğmeleri */}
         {currentPage > 1 && (
-          <button onClick={() => handlePageChange(currentPage - 1)}>
+          <button
+            className="page-btn"
+            onClick={() => handlePageChange(currentPage - 1)}
+          >
             Previous Page
           </button>
         )}
-        <span> Page {currentPage} </span>
-        <button onClick={() => handlePageChange(currentPage + 1)}>
+        <span style={{ color: "black" }}> Page {currentPage} </span>
+        <button
+          className="page-btn"
+          onClick={() => handlePageChange(currentPage + 1)}
+        >
           Next Page
         </button>
       </div>

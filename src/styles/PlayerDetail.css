@@ -1,0 +1,88 @@
+/* PlayerDetail.css */
+
+body {
+  /* margin-top: 220px; */
+  padding: 0;
+  background: url("https://lh3.googleusercontent.com/9iUUh_3xtubw1wD64AKEDxjfgguCCEO_d-VgEKl-7KW1XHCnyWZ4vjSMDgl2KtjKt1vONeLBZG5o=w1440-ns-nd-rj") center/cover no-repeat fixed;
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+}
+
+.container {
+  max-width: 600px;
+  /* margin: 50vh auto 0; Vertical ortalamak için 50vh (viewport yüksekliğinin yarısı) kullanıldı */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+
+.card {
+width: 750px ;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  background-color: #fff;
+  transition: box-shadow 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+.card-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #343a40;
+  transition: color 0.3s;
+}
+
+.card:hover .card-title {
+  color: #0391bc;
+}
+
+.list-group-item {
+  border: none;
+  padding: 8px 0;
+  background-color: #f8f9fa;
+  color: #495057;
+}
+
+.btn-go-back {
+  margin-top: 20px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+ 
+
+.img-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+}
+
+.img-container img {
+  max-width: 100px;
+  border-radius: 10%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.img-container img:hover {
+  transform: scale(1.1);
+}

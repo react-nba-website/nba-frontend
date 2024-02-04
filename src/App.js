@@ -1,4 +1,4 @@
-import './App.css';
+import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from './screens/HomePage';
 import Players from './screens/Players';
@@ -11,11 +11,10 @@ import GameDetail from './screens/DetailPages/GameDetail';
 import StatDetail from './screens/DetailPages/StatDetail';
 
 function App() {
-
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' index element={<HomePage />} />
+        <Route path="/" index element={<HomePage />} />
         <Route path="players" element={<Players />} />
         <Route path="teams" element={<Teams />} />
         <Route path="games" element={<Games />} />
