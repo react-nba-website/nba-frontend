@@ -43,18 +43,18 @@ function Players() {
       <ul className="player-list">
         {players.map((player) => (
           <li className="player-list-item" key={player.id}>
-            <Link to={`/players/${player.id}`}>
+            <Link to={`/players/${player.id}`} style={{ width: "560px" }}>
               {player.first_name} {player.last_name}
             </Link>
           </li>
         ))}
       </ul>
 
-      <div className="pagination">
+      <div className="player-pagination">
         {/* Sayfalama düğmeleri */}
         {currentPage > 1 && (
           <button
-            className="page-btn"
+            className="player-page-btn"
             onClick={() => handlePageChange(currentPage - 1)}
           >
             Previous Page
@@ -62,7 +62,7 @@ function Players() {
         )}
         <span style={{ color: "black" }}> Page {currentPage} </span>
         <button
-          className="page-btn"
+          className="player-page-btn"
           onClick={() => handlePageChange(currentPage + 1)}
         >
           Next Page
