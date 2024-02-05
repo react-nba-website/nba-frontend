@@ -44,7 +44,7 @@ function TeamDetail() {
                     alt={teamDetails.full_name}
                     className="card-img-top team-image"
                 />
-                <div className="card-body">
+                <div className="card-body text-center">
                     <p className="card-text"><strong>Full Name:</strong> {teamDetails.full_name}</p>
                     <p className="card-text"><strong>Name:</strong> {teamDetails.name}</p>
                     <p className="card-text"><strong>Abbreviation:</strong> {teamDetails.abbreviation}</p>
@@ -52,14 +52,15 @@ function TeamDetail() {
                     <p className="card-text"><strong>Conference:</strong> {teamDetails.conference}</p>
                     <p className="card-text"><strong>Division:</strong> {teamDetails.division}</p>
                     {/* Ekstra bilgileri buraya ekleyebilirsiniz */}
+                    <button
+                        type="button"
+                        className="btn btn-go-back mt-3"
+                        onClick={goBackHandler}
+                    >
+                        Go Back
+                    </button>
                 </div>
-                <button
-                    type="button"
-                    className="btn btn-go-back mt-3"
-                    onClick={goBackHandler}
-                >
-                    Go Back
-                </button>
+
             </div>
 
         </div>
