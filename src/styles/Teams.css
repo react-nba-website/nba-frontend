@@ -11,6 +11,7 @@ body {
 
 .teams-container {
     margin-top: 20px;
+    width: 100%;
 }
 
 .team-card {
@@ -48,5 +49,6 @@ body {
     background-color: #f0f0f0;
     border: none;
     border-radius: 0 0 10px 10px;
-    font-weight: bold; /* Yazıları kalın yap */
+    font-weight: bold;
+    /* Yazıları kalın yap */
 }

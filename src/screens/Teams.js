@@ -34,7 +34,7 @@ function Teams() {
 
     return (
         <div className="container teams-container">
-            <h2>Teams</h2>
+            <h2 style={{ color: 'black' }}>Teams</h2>
             <div className="row">
                 {teams.map((team) => (
                     <div key={team.id} className="col-md-4 mb-4">

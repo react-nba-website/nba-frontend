@@ -54,14 +54,14 @@ function TeamDetail() {
                     {/* Ekstra bilgileri buraya ekleyebilirsiniz */}
                 </div>
                 <button
-                type="button"
-                className="btn btn-go-back mt-3"
-                onClick={goBackHandler}
-            >
-                Go Back
-            </button>
+                    type="button"
+                    className="btn btn-go-back mt-3"
+                    onClick={goBackHandler}
+                >
+                    Go Back
+                </button>
             </div>
-            
+
         </div>
     );
 }

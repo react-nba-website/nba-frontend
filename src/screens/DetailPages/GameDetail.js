@@ -31,7 +31,7 @@ function GameDetail() {
 
     return (
         <div className="container mt-5 " >
-            <h1 className="mb-4">Game Detail</h1>
+            <h1 className="mb-4" style={{ color: 'black' }}>Game Detail</h1>
             <div className="card">
                 <div className="card-body">
                     <p className="card-text"><strong>Home Team:</strong> {game.home_team.full_name}</p>

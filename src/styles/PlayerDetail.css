@@ -3,7 +3,6 @@
 
 
 .container {
-  max-width: 600px;
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -60,7 +59,7 @@ width: 750px ;
   transition: background-color 0.3s;
 }
 
- 
+
 
 .img-container {
   position: absolute;
