@@ -30,7 +30,7 @@ function Games() {
     }, []);
 
     return (
-        <div className="container mt-5" >
+        <div className="container mt-5" style={{ color: 'black' }}>
             <h1 className="mb-4">Games</h1>
             <ul className="calendar" >
                 {games.map(game => (
