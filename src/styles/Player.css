@@ -41,12 +41,12 @@
   }
   
   .player-list-item a:hover {
-    background-color: #f8f9fa;
+    background-color: #b5d8fc;
 
   }
   
   /* Pagination */
-  .pagination {
+  .player-pagination {
     /* margin-top: 600px; */
     margin-left:300px;
     display: flex;
@@ -54,7 +54,7 @@
     align-items: center;
   }
   
-  .page-btn {
+  .player-page-btn {
     background-color: #021d3a;
     color: #fff;
     border: none;
