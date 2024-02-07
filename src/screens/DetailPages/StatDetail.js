@@ -29,8 +29,8 @@ function StatDetail() {
     }, []);
 
     return (
-        <div className="container detail-container mt-4">
-            <h2 className="detail-heading">Stat Detail</h2>
+        <div className="detail-container mt-4">
+            <h2 className="detail-heading" style={{ color: 'white' }}>Stat Detail</h2>
             <table className="table table-bordered detail-table">
                 <thead>
                     <tr>
@@ -81,7 +81,7 @@ function StatDetail() {
                             <td>{stat.ft_pct}</td>
                             <td>{stat.fta}</td>
                             <td>{stat.ftm}</td>
-                            <td><Link to={`/games/${stat.game.id}`}>Game</Link></td> 
+                            <td><Link to={`/games/${stat.game.id}`}>Game</Link></td>
                             <td>{stat.min}</td>
                             <td>{stat.oreb}</td>
                             <td>{stat.pf}</td>

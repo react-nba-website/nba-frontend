@@ -26,8 +26,8 @@ function Stats() {
     }, []);
 
     return (
-        <div className="container mt-4">
-            <h2>Stats</h2>
+        <div className=" mt-4 p-4">
+            <h2 style={{ color: 'white' }}>Stats</h2>
             <h2><Link to={`StatDetail`} style={{ textDecoration: 'none' }}>Go Details</Link></h2>
             <table className="table table-bordered stats-table">
                 <thead>

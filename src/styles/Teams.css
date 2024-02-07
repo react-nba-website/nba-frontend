@@ -1,13 +1,4 @@
 /* Teams.css */
-body {
-    margin: 0;
-    padding: 0;
-    background: url("https://lh3.googleusercontent.com/9iUUh_3xtubw1wD64AKEDxjfgguCCEO_d-VgEKl-7KW1XHCnyWZ4vjSMDgl2KtjKt1vONeLBZG5o=w1440-ns-nd-rj") center/cover no-repeat fixed;
-    background-size: cover;
-    height: 100vh;
-    font-family: 'Arial', sans-serif;
-    color: #333;
-}
 
 .teams-container {
     margin-top: 20px;
@@ -37,7 +28,7 @@ body {
     margin: 0;
 }
 
-.card {
+.team-card {
     transition: transform 0.3s;
 }
 

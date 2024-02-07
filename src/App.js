@@ -12,20 +12,25 @@ import StatDetail from './screens/DetailPages/StatDetail';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" index element={<HomePage />} />
-        <Route path="players" element={<Players />} />
-        <Route path="teams" element={<Teams />} />
-        <Route path="games" element={<Games />} />
-        <Route path="stats" element={<Stats />} />
-        {/* Detail Pages */}
-        <Route path="players/*" element={<PlayerDetail />} />
-        <Route path="teams/*" element={<TeamDetail />} />
-        <Route path="games/*" element={<GameDetail />} />
-        <Route path="stats/*" element={<StatDetail />} />
-      </Routes>
-    </BrowserRouter>
+    <div>
+      <nav class="navbar navbar-expand-lg  p-3" style={{ backgroundColor: 'orange' }}>
+        <a class="navbar-brand" style={{ backgroundColor: 'blue', width: 60, display: 'flex', justifyContent: 'center', borderRadius: 10, color: 'white' }} href="/">NBA</a>
+      </nav>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" index element={<HomePage />} />
+          <Route path="players" element={<Players />} />
+          <Route path="teams" element={<Teams />} />
+          <Route path="games" element={<Games />} />
+          <Route path="stats" element={<Stats />} />
+          {/* Detail Pages */}
+          <Route path="players/*" element={<PlayerDetail />} />
+          <Route path="teams/*" element={<TeamDetail />} />
+          <Route path="games/*" element={<GameDetail />} />
+          <Route path="stats/*" element={<StatDetail />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 

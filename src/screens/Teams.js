@@ -33,13 +33,13 @@ function Teams() {
     };
 
     return (
-        <div className="container teams-container">
-            <h2 style={{ color: 'black' }}>Teams</h2>
+        <div className=" teams-container p-4">
+            <h2 style={{ color: 'white' }}>Teams</h2>
             <div className="row">
                 {teams.map((team) => (
-                    <div key={team.id} className="col-md-4 mb-4">
+                    <div key={team.id} className="col-md-4 mb-4" >
                         <Link to={`/teams/${team.id}`} style={{ textDecoration: 'none' }}>
-                            <div className="card shadow-sm team-card">
+                            <div className=" shadow-sm team-card" style={{ backgroundColor: 'white' }}>
                                 <img
                                     src="https://thumbs.dreamstime.com/b/basketball-team-11952184.jpg"
                                     alt={team.full_name}

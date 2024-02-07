@@ -1,19 +1,94 @@
-/* .home-page-div {
-    width: 100%;
-    height: 100vh;
-    background-color: aqua;
+.wrapper {
     display: flex;
-    justify-content: center;
     align-items: center;
-}
+    justify-content: center;
 
-.home-page-route-item {
-    width: 200px;
-    height: 200px;
-    background-color: bisque;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
-    cursor: pointer;
-} */
+    .container {
+        height: 400px;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+
+    .card {
+        width: 80px;
+        border-radius: .75rem;
+        background-size: cover;
+        cursor: pointer;
+        overflow: hidden;
+        border-radius: 2rem;
+        margin: 0 10px;
+        display: flex;
+        align-items: flex-end;
+        transition: .6s cubic-bezier(.28, -0.03, 0, .99);
+        box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
+    }
+
+    .card>.row {
+        color: white;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .card>.row>.icon {
+        background: #223;
+        color: white;
+        border-radius: 50%;
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 15px;
+    }
+
+    .card>.row>.description {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        overflow: hidden;
+        height: 80px;
+        width: 520px;
+        opacity: 0;
+        transform: translateY(30px);
+        transition-delay: .3s;
+        transition: all .3s ease;
+    }
+
+    .description p {
+        color: #b0b0ba;
+        padding-top: 5px;
+    }
+
+    .description h4 {
+        text-transform: uppercase;
+    }
+
+    input {
+        display: none;
+    }
+
+    input:hover+label {
+        width: 600px;
+    }
+
+    input:hover+label .description {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+
+    .card[for="c1"] {
+        background-image: url('https://lh3.googleusercontent.com/9iUUh_3xtubw1wD64AKEDxjfgguCCEO_d-VgEKl-7KW1XHCnyWZ4vjSMDgl2KtjKt1vONeLBZG5o=w1440-ns-nd-rj');
+    }
+
+    .card[for="c2"] {
+        background-image: url('https://lh3.googleusercontent.com/9iUUh_3xtubw1wD64AKEDxjfgguCCEO_d-VgEKl-7KW1XHCnyWZ4vjSMDgl2KtjKt1vONeLBZG5o=w1440-ns-nd-rj');
+    }
+
+    .card[for="c3"] {
+        background-image: url('https://lh3.googleusercontent.com/9iUUh_3xtubw1wD64AKEDxjfgguCCEO_d-VgEKl-7KW1XHCnyWZ4vjSMDgl2KtjKt1vONeLBZG5o=w1440-ns-nd-rj');
+    }
+
+    .card[for="c4"] {
+        background-image: url('https://lh3.googleusercontent.com/9iUUh_3xtubw1wD64AKEDxjfgguCCEO_d-VgEKl-7KW1XHCnyWZ4vjSMDgl2KtjKt1vONeLBZG5o=w1440-ns-nd-rj');
+    }
+}

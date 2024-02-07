@@ -9,6 +9,7 @@ function Players() {
   const [players, setPlayers] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const playersPerPage = 10;
+  const [search, setSearch] = useState("")
 
   useEffect(() => {
     axios
@@ -17,6 +18,7 @@ function Players() {
           page: currentPage,
           per_page: playersPerPage,
           order_by: "id",
+          search: search,
         },
         headers: {
           "X-RapidAPI-Key":
@@ -30,7 +32,7 @@ function Players() {
       .catch((err) => {
         console.error(err);
       });
-  }, [currentPage]);
+  }, [currentPage, search]);
 
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
@@ -39,6 +41,7 @@ function Players() {
   return (
     <div className="container">
       <h1 className="player-list-heading">Player List</h1>
+      <input onChange={(e) => setSearch(e.target.value)} type="text" className="form-control my-5" placeholder="Search" aria-label="Username" aria-describedby="basic-addon1" />
 
       <ul className="player-list">
         {players.map((player) => (

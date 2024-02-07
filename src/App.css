@@ -13,6 +13,21 @@
   }
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  background: url("https://lh3.googleusercontent.com/9iUUh_3xtubw1wD64AKEDxjfgguCCEO_d-VgEKl-7KW1XHCnyWZ4vjSMDgl2KtjKt1vONeLBZG5o=w1440-ns-nd-rj") center/cover no-repeat fixed;
+  background-size: cover;
+  /* Ekran boyutuna sığacak şekilde ayarla */
+  height: 100vh;
+  /* Ekran yüksekliği kadar uzat */
+  font-family: 'Arial', sans-serif;
+  /* İstenilen fontu ekleyebilirsiniz */
+  color: #333;
+  /* Metin rengini belirleyebilirsiniz */
+}
+
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -32,6 +47,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
