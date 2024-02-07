@@ -46,7 +46,7 @@ function Players() {
       <ul className="player-list">
         {players.map((player) => (
           <li className="player-list-item" key={player.id}>
-            <Link to={`/players/${player.id}`} style={{ width: "560px" }}>
+            <Link to={`/players/${player.id}`} style={{ width: "100%" }}>
               {player.first_name} {player.last_name}
             </Link>
           </li>
